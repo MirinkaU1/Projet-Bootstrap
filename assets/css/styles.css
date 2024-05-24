@@ -1,6 +1,7 @@
 :root{
     --ft-family: "Poppins", sans-serif;
     --color-blue: #1A2259;
+    --color-wblue: #0ADEE4;
     --fw-t:700;
     --fw-st:600;
     --fw-p:500;
@@ -8,11 +9,16 @@
 html {
     scroll-behavior: smooth;
 }
-a, h1, h5, p {
+a, h1, h2, h5, p, input {
     font-family: var(--ft-family);
 }
 a.btn, form > .btn {
     background: var(--color-blue);
+}
+
+a.btn:hover, form > .btn:hover {
+    background: var(--color-wblue);
+    color: var(--color-blue);
 }
 
 .nav-link {
@@ -22,19 +28,30 @@ a.btn, form > .btn {
 
 .navbar-brand img {
     width: 200px;
-
 }
 .hero {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg");
-    background-size: cover;
-    background-position: top left;
     height: 100vh;
+    object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--color-blue);
     text-align: center;
+    position: relative;
 }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg);
+    background-size: cover;
+    z-index: -1;
+  }
+  
 .hero h1 {
     font-size: 4rem;
     font-family: var(--ft-family);
@@ -43,8 +60,13 @@ a.btn, form > .btn {
 .hero p {
     font-size: 1.5rem;
     font-family: var(--ft-family);
-    font-weight: var();
+    font-weight: var(--fw-p);
     color: var(--color-blue);
+}
+#card-destination {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
 }
 .card-body {
     padding: .75rem 1.25rem;
@@ -53,7 +75,7 @@ a.btn, form > .btn {
     color: white;
 }
 .icon-link:hover {
-    color: grey;
+    color: var(--color-wblue);
 }
 footer {
     background: var(--color-blue);
