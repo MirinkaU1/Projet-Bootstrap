@@ -1,11 +1,33 @@
+:root{
+    --ft-family: "Poppins", sans-serif;
+    --color-blue: #1A2259;
+    --fw-t:700;
+    --fw-st:600;
+    --fw-p:500;
+}
+html {
+    scroll-behavior: smooth;
+}
+a, h1, h5, p {
+    font-family: var(--ft-family);
+}
+a.btn, form > .btn {
+    background: var(--color-blue);
+}
+
+.nav-link {
+    color: var(--color-blue) !important;
+    font-weight: var(--fw-p);
+}
 
 .navbar-brand img {
     width: 200px;
+
 }
 .hero {
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg");
     background-size: cover;
-    background-position: top;
+    background-position: top left;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,9 +37,14 @@
 }
 .hero h1 {
     font-size: 4rem;
+    font-family: var(--ft-family);
+    font-weight: var(--fw-t);
 }
 .hero p {
     font-size: 1.5rem;
+    font-family: var(--ft-family);
+    font-weight: var();
+    color: var(--color-blue);
 }
 .card-body {
     padding: .75rem 1.25rem;
@@ -27,4 +54,7 @@
 }
 .icon-link:hover {
     color: grey;
+}
+footer {
+    background: var(--color-blue);
 }
